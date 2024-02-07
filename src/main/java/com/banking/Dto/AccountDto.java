@@ -2,7 +2,6 @@ package com.banking.Dto;
 
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 
 @Data
@@ -14,6 +13,17 @@ public class AccountDto {
 	private String accountHolderName;
 	
 	private double balance;
+	
+	public AccountDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public AccountDto(Long id, String accountHolderName, double balance) {
+		super();
+		this.id = id;
+		this.accountHolderName = accountHolderName;
+		this.balance = balance;
+	}
 
 	public Long getId() {
 		return id;

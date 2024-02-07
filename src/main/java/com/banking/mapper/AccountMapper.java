@@ -1,27 +1,30 @@
 package com.banking.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.banking.Dto.AccountDto;
 import com.banking.entity.Account;
-
+@Component
 public class AccountMapper {
 
 	 
 	
-	public static Account maptoAccount(AccountDto accountDto) {
+	public Account maptoAccount(AccountDto accountDto) {
 		
 		Account account = new Account();
-		accountDto.getId();
-		accountDto.getAccountHolderName();
-		accountDto.getBalance();
+		account.setId(accountDto.getId());
+		account.setAccountHolderName(accountDto.getAccountHolderName());
+		account.setBalance(accountDto.getBalance());
+		
 		return account;
 	}
 	
-public static AccountDto maptoAccountDto(Account account ) {
+public AccountDto maptoAccountDto(Account account ) {
 		
 		AccountDto accountDto = new AccountDto();
-		accountDto.getId();
-		accountDto.getAccountHolderName();
-		accountDto.getBalance();
+		accountDto.setId(accountDto.getId());
+		accountDto.setAccountHolderName(accountDto.getAccountHolderName());
+		accountDto.setBalance(accountDto.getBalance());
 		return accountDto;
 	}
 	

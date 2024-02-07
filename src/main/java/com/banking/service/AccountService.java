@@ -1,10 +1,9 @@
 package com.banking.service;
 
-import org.springframework.stereotype.Service;
 
 import com.banking.Dto.AccountDto;
+import com.banking.entity.Account;
 
-@Service
 public interface AccountService {
 
 	
