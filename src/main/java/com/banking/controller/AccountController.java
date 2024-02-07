@@ -38,21 +38,20 @@ public class AccountController {
 
 	private static Logger logger = LoggerFactory.getLogger(AccountController.class);
 	
-
-	// Add account rest api
-
-	@PostMapping("/add")
-	public ResponseEntity<AccountDto>addAccount( AccountDto accountDto ) {
-		logger.debug("Adding-Account");
-		return new ResponseEntity<>(accountService.accountCreated(accountDto),HttpStatus.CREATED);
-	}
-
-	
 	public AccountController(AccountRepository accountRepository, AccountService accountService) {
 		super();
 		this.accountRepository = accountRepository;
 		this.accountService = accountService;
 	}
+	// Add account rest api
+
+	@PostMapping("/add")
+	public ResponseEntity<AccountDto>addAccount(@RequestBody AccountDto accountDto ) {
+		logger.debug("Adding-Account");
+		return new ResponseEntity<>(accountService.accountCreated(accountDto),HttpStatus.CREATED);
+	}
+	
+	
 	
 	
 
